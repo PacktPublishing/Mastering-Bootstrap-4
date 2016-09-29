@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ch07</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/myphoto.css" />
+    <link rel="stylesheet" href="styles/alert.css" />
+    <link rel="stylesheet" href="styles/carousel.css" />
+    <link rel="stylesheet" href="styles/a11yhcm.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="bower_components/lightbox-for-bootstrap/css/bootstrap.lightbox.css" />
+    <link rel="stylesheet"
+          href="bower_components/DataTables/media/css/dataTables.bootstrap.min.css" />
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/a11yhcm.js"></script>
+    <script src="bower_components/jquery.browser/dist/jquery.browser.min.js"></script>
+    <script src="bower_components/bootpag/lib/jquery.bootpag.min.js"></script>
+    <script src="bower_components/lightbox-for-bootstrap/js/bootstrap.lightbox.js"></script>
+
+    <script src="bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript">
+    $( document ).ready(function() {
+      $("nav div ul li a").on('click', function(evt) {
+        evt.preventDefault();
+        var offset = $(this.hash).offset();
+        if (offset) {
+          $('body').animate({
+            scrollTop: offset.top
+          });
+        }
+      });
+      if ($.browser.msie && $.browser.version <= 7) {
+        $('#unsupported-browser-alert').show();
+      }
+
+      // Pagination
+      // Show first page by default
+      $('#page-1').show();
+
+      $('#services-events-pagination').bootpag({
+        total: 10
+      }).on("page", function(event, num){
+        $('#services-events-content div').hide();
+
+        var current_page = '#page-' + num;
+        $(current_page).show();
+
+      });
+
+      $('#services-prints-table').DataTable( {
+    "order": [[ 3, "desc" ]]
+  } );
+    });
+    </script>
+  </head>
+  <body data-spy="scroll" data-target=".navbar" >
+    <nav class="navbar navbar-fixed-top navbar-myphoto">
+      <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse"
+      data-target="#navigation">
+      &#9776;
+      </button>
+      <a class="navbar-brand" href="#">MyPhoto</a>
+      <div class="collapse navbar-toggleable-xs" id="navigation">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link" href="#welcome">Welcome</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+            <li class="nav-item dropdown pull-xs-right">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                aria-haspopup="true" aria-expanded="false">
+                    Profile <span class="caret"></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#profile-modal">
+                      <i class="fa fa-user"></i> Profile
+                    </a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#settings-modal">
+                      <i class="fa fa-cogs"></i> Settings
+                    </a>
+                  <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">
+                      <i class="fa fa-sign-out"></i> Logout
+                    </a>
+                    <a class="dropdown-item a11yhcm" href="#" data-a11yhcm="styles/myphoto-hcm.css">
+                      <i class="fa fa-adjust"></i> High Contrast Mode
+                    </a>
+                </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <div class="alert alert-info alert-position">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <a href="#" class="close minimize" data-minimize="alert" aria-label="minimize">_</a>
+        <a href="#" class="close expand hidden-xs-up" data-expand="alert" aria-label="expand">+</a>
+          <strong><i class="fa fa-exclamation"></i> Special Offer - </strong>
+          <span>2 FOR 1 PRINTS TODAY ONLY WITH PROMO CODE <strong
+                  style="font-style: italic">BOOTSTRAP
+            </strong></span>
+      </div>
+      <div class="alert alert-danger alert-dismissible alert-position" id="unsupported-browser-alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong class="alert-heading"><i class="fa fa-exclamation"></i> Unsupported
+            browser</strong>
+          Internet Explorer 8 and lower are not supported by this website.
+      </div>
+      <div class="modal" id="profile-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+              <h4 class="modal-title" id="profile-modal-label">Profile</h4>
+            </div>
+            <div class="modal-body">
+              Profile
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success"><i class="fa fa-check"></i> Save</button>
+              <button class="btn btn-default">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="settings-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+              <h4 class="modal-title" id="settings-modal-label">Settings</h4>
+            </div>
+            <div class="modal-body">
+              Settings
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success"><i class="fa fa-check"></i> Save</button>
+              <button class="btn btn-default">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid myphoto-section bg-myphoto-welcome" id="welcome">
+        <div class="container">
+          <div class="jumbotron">
+            <h1>Welcome to MyPhoto</h1>
+            <p>Photographs you can cherish!</p>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid myphoto-section bg-myphoto-dark" id="services">
+        <div class="container">
+          <div class="row">
+            <h3>Services</h3>
+          </div>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="#services-events" data-toggle="tab" class="nav-link active">Events
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#services-personal" data-toggle="tab" class="nav-link">Personal</a>
+            </li>
+            <li class="nav-item">
+              <a href="#services-prints" data-toggle="tab" class="nav-link">
+                Prints</a>
+            </li>
+            <li class="nav-item">
+              <a href="#services-testimonials" data-toggle="tab" class="nav-link">
+                Testimonials</a>
+            </li>
+         </ul>
+          <div class="tab-content bg-myphoto-light">
+            <div role="tabpanel" class="tab-pane active" id="services-events">
+              <div class="container"><div class="row"><div id="services-events-content">
+                    <div id="page-1">
+                      <h3>My Sample Event #1</h3>
+                      <p>
+                        <span class="thumbnails" data-toggle="lightbox">
+                          <img src="images/event1.jpg" align="left" width="80" height="45"
+                               class="thumbnail" data-target="images/event1.jpg"/>
+                        </span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo
+                        dolor,fringilla vel lacus at, auctor finibus ipsum. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Morbi quis arcu lorem. Vivamus elementum convallis
+                        enim sagittis tincidunt. Nunc feugiat mollis risus non dictum. Nam commodo nec
+                        sapien a vestibulum. Duis et tellus cursus, laoreet ante non, mollis sem.
+                        Nullam vulputate justo nisi, sit amet bibendum ligula varius id.
+                      </p>
+                      <h3>My Sample Event #2</h3>
+                      <p>
+                        <span class="thumbnails" data-toggle="lightbox">
+                          <img src="images/event2.jpg" align="left" width="80" height="45"
+                               class="thumbnail" data-target="images/event2.jpg"/>
+                        </span>  Lorem
+                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo dolor,
+                        fringilla vel lacus at, auctor finibus ipsum. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Morbi quis arcu lorem. Vivamus elementum convallis
+                        enim sagittis tincidunt. Nunc feugiat mollis risus non dictum. Nam commodo nec
+                        sapien a vestibulum. Duis et tellus cursus, laoreet ante non, mollis sem.
+                        Nullam vulputate justo nisi, sit amet bibendum ligula varius id.
+                      </p>
+                    </div>
+                    <div id="page-2">
+                      <h3>My Sample Event #3</h3>
+                      <p>
+                        <span class="thumbnails" data-toggle="lightbox">
+                          <img src="images/event3.jpg" align="left" width="80" height="45"
+                               class="thumbnail" data-target="images/event3.jpg"/>
+                        </span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo dolor,
+                        fringilla vel lacus at, auctor finibus ipsum. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Morbi quis arcu lorem. Vivamus elementum convallis
+                        enim sagittis tincidunt. Nunc feugiat mollis risus non dictum. Nam commodo nec
+                        sapien a vestibulum. Duis et tellus cursus, laoreet ante non, mollis sem.
+                        Nullam vulputate justo nisi, sit amet bibendum ligula varius id.
+                      </p>
+                    </div>
+                  </div>
+                  <div id="services-events-pagination">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="services-personal">
+              <div class="container">
+                <div class="row">
+                  <p>Lorem Ipsum</p>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="services-prints">
+              <div class="m-x-auto" style="width:50%">
+                <h1 class="bg-primary text-xs-center">Special Offers</h1>
+              </div>
+              <div class="container">
+                <h1 class="hidden-md">Our Print Sizes</h1>
+                <div style="max-width: 90%;">
+                  <table id="services-prints-table" class="table table-striped" width="100%">
+                    <thead>
+                      <tr>
+                        <th>Extra Large</th>
+                        <th>Large</th>
+                        <th>Medium</th>
+                        <th>Small</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>24x36 (€60)</td>
+                        <td>19x27 (€45)</td>
+                        <td>12x18 (€28)</td>
+                        <td>6x5 (€15)</td>
+                      </tr>
+                      <tr>
+                        <td>27x39 (€75)</td>
+                        <td>20x30 (€48)</td>
+                        <td>16x20 (€35)</td>
+                        <td>8x10 (€18)</td>
+                      </tr>
+                    <tr>
+                        <td>27x40 (€75)</td>
+                        <td>22x28 (€55)</td>
+                        <td>18x24 (€40)</td>
+                        <td>11x17 (€55)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="services-testimonials">
+              <div class="container">
+                <div class="row myphoto-testimonial-row">
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Debbie</h6>
+                    <p>Great service! Would recommend to friends!</p>
+                  </div>
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Joey</h6>
+                    <p>5 stars! Thanks for the great photos!</p>
+                  </div>
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Jack & Jill</h6>
+                    <p>So happy with how the photos turned out! Thanks for capturing the memories of our day!</p>
+                  </div>
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Tony</h6>
+                    <p>Captured our Cup final win! Great stuff!</p>
+                  </div>
+                </div>
+                <div class="row myphoto-testimonial-row">
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Anne</h6>
+                    <p>Really high quality prints!</p>
+                  </div>
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Mary</h6>
+                    <p>Made a stressful event much easier! Absolute professionals!</p>
+                  </div>
+                </div>
+                <div class="row myphoto-testimonial-row">
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Oscar</h6>
+                    <p>Declared their greatness, exhibited greatness.</p>
+                  </div>
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Alice</h6>
+                    <p>Wonderful! Exactly as I imagined they would turn out!</p>
+                  </div>
+                  <div class="col-xs-3 myphoto-testimonial-column">
+                    <h6>Nick</h6>
+                    <p>Perfectly captured the mood of our gig. Top notch.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid myphoto-section bg-myphoto-light" id="gallery">
+        <div class="container">
+          <div class="row">
+            <h3>Gallery</h3>
+            <div class="modal fade carousel-modal" id="carousel-modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                  </div>
+                  <div class="modal-body">
+                    <img>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gallery-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+              <div class="carousel-inner" role="listbox">
+                <div style="height: 400px" class="carousel-item active">
+                  <img data-modal-picture="#carousel-modal" src="images/brazil.png">
+                  <div class="carousel-caption">
+                    Brazil
+                  </div>
+                </div>
+                <div style="height: 400px" class="carousel-item">
+                  <img data-modal-picture="#carousel-modal" src="images/datsun.png">
+                  <div class="carousel-caption">
+                    Datsun 260Z
+                  </div>
+                </div>
+                <div style="height: 400px" class="carousel-item">
+                  <img data-modal-picture="#carousel-modal" src="images/skydive.png">
+                  <div class="carousel-caption">
+                    Skydive
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#gallery-carousel" role="button" data-slide="prev">
+                <span class="icon-prev" aria-hidden="true"></span>
+              </a>
+              <a class="right carousel-control" href="#gallery-carousel" role="button" data-slide="next">
+                <span class="icon-next" aria-hidden="true"></span>
+              </a>
+              <ol class="carousel-indicators">
+                <li data-target="#gallery-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#gallery-carousel" data-slide-to="1"></li>
+                <li data-target="#gallery-carousel" data-slide-to="2"></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid myphoto-section bg-myphoto-dark" id="about">
+        <div class="container">
+          <div class="row">
+            <h3>About</h3>
+            <div class="card bg-myphoto-light">
+              <div class="card-block">
+                  <p>The style of photography will be customised to your personal preference, as if being shot from your own eyes. You will be part of every step of the photography process, to ensure these photos feel like your own.</p>
+
+                  <p>Our excellent photographers have many years of experience, capturing moments from weddings to sporting events of absolute quality.</p>
+
+                  <p>MyPhoto also provides superb printing options of all shapes and sizes, on any canvas, in any form. From large canvas prints to personalised photo albums, MyPhoto provides it all.</p>
+
+                  <p>MyPhoto provides a full, holistic solution for all your photography needs.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid myphoto-section bg-myphoto-light" id="contact">
+        <div class="container">
+          <div class="row">
+            <h3>Contact Us</h3>
+          <p>
+              Lorem ipsum dolor sit amet, modo integre ad est, omittam temporibus ex sit,
+              dicam molestie eum ne. His ad nonumy mentitum offendit, ea tempor timeam nec,
+              doming latine liberavisse his ne. An vix movet dolor. Ut pri qualisque reprehendunt,
+              altera insolens torquatos in per. Mei veri omnium omittam at, ea qui discere ceteros.
+          </p>
+          <p>
+              Aeterno meliore has ut, sed ad nibh sadipscing accommodare.
+              Tollit volumus mea id, sed dicunt aliquando cu. Ea reque similique deseruisse duo.
+              Est te essent argumentum, mea et error tritani eleifend. Eum appellantur
+              intellegebat at, ne graece repudiandae vituperatoribus duo.
+          </p>
+          <p>
+              Ut semper dicunt voluptatum est. Viris vivendum insolens eam ea, his ne
+              eirmod corpora volutpat. Mentitum molestiae eu sed, minim dicit maiestatis duo et.
+              Ad pri nusquam voluptaria. Pri wisi utroque an.
+          </p>
+          <h4>Send us a message</h4>
+            <form>
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" placeholder="Your name">
+              </div>
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-at"></i></span>
+                <input type="text" class="form-control" placeholder="Your email address">
+              </div>
+
+              <div class="form-group">
+                <label for="name">Your message</label>
+                <textarea class="form-control" rows="5" id="message"></textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-success">
+                  <i class="fa fa-send-o"></i>
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer class="footer text-xs-center">
+        <p class="text-muted"><small>&copy; MyPhoto Inc.</small></p>
+        <p class="text-muted text-center"><a href="#"><small>Terms &amp; Conditions</small></a></p>
+        <p class="text-muted"><a href="#"><small>About Us</small></a></p>
+      </footer>
+    </body>
+  </html>

@@ -1,0 +1,221 @@
+h1, h2, h3, h4, h5, h6, .nav, .navbar {
+	font-family: 'Poiret One', cursive;
+}
+
+body {
+	font-family: 'Lato', cursive;
+}
+
+.myphoto-section {
+	min-height: 500px;
+}
+
+.bg-myphoto-dark {
+	background-color: #504747;
+	color: white;
+}
+
+.bg-myphoto-light {
+	background-color: white;
+	color: #504747;
+}
+
+.bg-myphoto-welcome {
+	background-image: url('../images/skyline.png');
+	background-size: cover;
+	color: #504747;
+}
+
+.jumbotron-welcome {
+	background-image: url('../images/skyline.png');
+	background-size: cover;
+	color: white;
+}
+
+.bg-myphoto-dark .nav-tabs a {
+	color: white;
+}
+
+.navbar-myphoto {
+    background-color: #504747;
+    border-color: black;
+    border-radius: 0;
+    margin-bottom: 0px;
+}
+
+.navbar-myphoto .navbar-brand {
+	color: white;
+	font-weight: bold;
+}
+
+.navbar-myphoto .nav-pills > li > a {
+	color: white;
+}
+
+.navbar-myphoto .nav-pills > li > a:hover {
+	background-color: #504747;
+	color: gray;
+}
+
+.navbar-myphoto .nav-pills > li > a:focus {
+	background-color: #504747;
+	color: gray;
+}
+
+.navbar-myphoto .nav-pills > li.active > a {
+	background-color: #504747;
+	color: gray;
+}
+
+.navbar-myphoto > .navbar-toggler {
+    color: white;
+}
+
+.navbar-myphoto .dropdown-menu {
+	background-color: #504747;
+	border-color: black;
+}
+
+.navbar-myphoto .dropdown-menu > a  {
+	color: white;
+	background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > a:hover  {
+	color: gray;
+	background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > a:focus  {
+	color: gray;
+	background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > .active > a:focus {
+	color: gray;
+	background-color: #504747;
+}
+
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover,
+.nav-pills .nav-item.open .nav-link,
+.nav-pills .nav-item.open .nav-link:focus,
+.nav-pills .nav-item.open .nav-link:hover {
+  background-color: grey;
+}
+
+footer p {
+	display: inline;
+	margin-left: 10px;
+}
+
+footer a {
+	color: inherit;
+}
+
+#services-events-content div {
+	display: none;
+}
+
+#services-events-content div img {
+	margin-top: 0.5em;
+	margin-right: 1em;
+}
+
+#services-events-content {
+	height: 15em;
+	overflow-y: scroll;
+}
+
+.alert-danger {
+	background-color: #a94342;
+	color: white;
+}
+
+.alert-position { 
+	position: fixed; 
+	margin-top: 4em;
+	width: 50%;
+	margin-left: 25%;
+	z-index: 10; 
+}
+
+.alert-position#unsupported-browser-alert {
+	display:none;
+}
+
+.alert-minimize {
+	width: 60px;
+}
+.alert-minimize * {
+	display: none;
+}
+
+.alert-minimize .close {
+	display: block;
+}
+
+.myphoto-testimonial-grid {
+	padding-top: 30px;
+}
+
+.myphoto-testimonial-group {
+	padding: 0px;
+}
+
+.myphoto-testimonial-grid[data-columns]::before {
+	content: '4 .col-xs-3.myphoto-testimonial-group.animated.bounceIn';
+}
+
+.column { 
+	float: left; 
+}
+
+.size-1of4 { 
+	width: 25%; 
+}
+
+.myphoto-testimonial-row {
+	margin-right: 5px;
+}
+
+.myphoto-testimonial-column {
+	padding: 10px;
+    border: 1px solid #000000;
+    margin: 5px;
+    background-color: #FFFFFF;
+}
+
+.myphoto-chevron-down.hvr-icon-bob:before {
+	content: "\f078";
+}
+
+.hvr-icon-bob {
+	vertical-align: top;
+}
+
+#services-events .container {
+    margin-left: 2rem;
+    padding-top: 1rem;
+}
+
+.table-page-item {
+    margin-left: 0.5rem;
+}
+
+.hvr-icon-bob:before {
+  content: "\f077";
+  position: absolute;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.hide-before-animated {
+	visibility: hidden;
+}
+
+.hide-before-animated.animated {
+	visibility: visible;
+}

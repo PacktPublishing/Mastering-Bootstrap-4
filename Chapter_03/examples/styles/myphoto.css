@@ -1,0 +1,108 @@
+h1, h2, h3, h4, h5, h6, .nav, .navbar {
+	font-family: 'Poiret One', cursive;
+}
+
+body {
+	font-family: 'Lato', cursive;
+}
+
+.myphoto-section {
+	min-height: 500px;
+}
+
+.bg-myphoto-dark {
+	background-color: #504747;
+	color: white;
+}
+
+.bg-myphoto-light {
+	background-color: white;
+	color: #504747;
+}
+
+.bg-myphoto-welcome {
+	background-image: url('/images/skyline.png');
+	background-size: cover;
+	color: #504747;
+}
+
+.jumbotron-welcome {
+	background-image: url('../images/skyline.png');
+	background-size: cover;
+	color: white;
+}
+
+.bg-myphoto-dark .nav-tabs a {
+	color: white;
+}
+
+.navbar-myphoto {
+	background-color: #504747;
+	border-color: black;
+	border-radius: 0;
+	margin-bottom: 0px;
+}
+
+.navbar-myphoto .navbar-brand {
+	color: white;
+	font-weight: bold;
+}
+
+.navbar-myphoto .nav-pills > li > a {
+	color: white;
+}
+
+.navbar-myphoto .nav-pills > li > a:hover {
+	background-color: #504747;
+	color: gray;
+}
+
+.navbar-myphoto .nav-pills > li > a:focus {
+	background-color: #504747;
+	color: gray;
+}
+
+.navbar-myphoto .nav-pills > li.active > a {
+	background-color: #504747;
+	color: gray;
+}
+
+.navbar-myphoto .dropdown-menu {
+	background-color: #504747;
+	border-color: black;
+}
+
+.navbar-myphoto .dropdown-menu > a  {
+	color: white;
+	background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > a:hover  {
+	color: gray;
+	background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > a:focus  {
+	color: gray;
+	background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > .active > a:focus {
+	color: gray;
+	background-color: #504747;
+}
+
+.navbar-myphoto > .navbar-toggler {
+	color: white;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background-color: grey;
+}
+
+.nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover,
+.nav-pills .nav-item.open .nav-link,
+.nav-pills .nav-item.open .nav-link:focus,
+.nav-pills .nav-item.open .nav-link:hover {
+  background-color: grey;
+}

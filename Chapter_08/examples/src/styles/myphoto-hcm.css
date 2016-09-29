@@ -1,0 +1,29 @@
+.navbar-myphoto .nav-pills > li > a:hover {
+  background-color: #504747;
+  color: yellow;
+}
+
+.navbar-myphoto .nav-pills > li > a:focus {
+  background-color: #504747;
+  color: yellow;
+}
+
+.navbar-myphoto .nav-pills > li.active > a {
+  background-color: #504747;
+  color: yellow;
+}
+
+.navbar-myphoto .dropdown-menu > a:hover  {
+  color: yellow;
+  background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > a:focus {
+  color: yellow;
+  background-color: #504747;
+}
+
+.navbar-myphoto .dropdown-menu > .active > a:focus {
+  color: yellow;
+  background-color: #504747;
+}
