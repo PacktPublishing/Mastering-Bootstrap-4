@@ -8,8 +8,7 @@ All of the code is organized into folders. Each folder starts with a number foll
 The code will look like the following:
 ```
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,
-initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>MyPhoto</title>
 ```
