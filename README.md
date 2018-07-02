@@ -1,6 +1,6 @@
-#Mastering Bootstrap 4
-This is the code repository for [Mastering Bootstrap 4](https://www.packtpub.com/web-development/mastering-bootstrap-4?utm_source=github&utm_medium=repository&utm_campaign=9781783981120), published by Packt. It contains all the supporting project files necessary to work through the book from start to finish.
-##Instructions and Navigations
+# Mastering Bootstrap 4
+This is the code repository for [Mastering Bootstrap 4](https://www.packtpub.com/web-development/mastering-bootstrap-4?utm_source=github&utm_medium=repository&utm_campaign=9781783981120), published by [Packt](https://www.packtpub.com/). It contains all the supporting project files necessary to work through the book from start to finish.
+## Instructions and Navigations
 All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
 
 
@@ -21,11 +21,11 @@ have an understanding of jQuery. Elementary knowledge about AngularJS, build too
 React are desirable for the book's final two chapters. However, unfamiliarity with the two
 frameworks will not stop readers from completing and understanding the examples.
 
-##Related Products
+## Related Products
 * [Angular 2 Components](https://www.packtpub.com/web-development/angular-2-components?utm_source=github&utm_medium=repository&utm_campaign=9781785882340)
 
 * [Instant AngularJS Starter](https://www.packtpub.com/web-development/instant-angularjs-starter-instant?utm_source=github&utm_medium=repository&utm_campaign=9781782166764)
 
 * [Responsive Web Design with AngularJS](https://www.packtpub.com/web-development/responsive-web-design-angularjs?utm_source=github&utm_medium=repository&utm_campaign=9781784398422)
-###Suggestions and Feedback
+### Suggestions and Feedback
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSe5qwunkGf6PUvzPirPDtuy1Du5Rlzew23UBp2S-P3wB-GcwQ/viewform) if you have any feedback or suggestions.
